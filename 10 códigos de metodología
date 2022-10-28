@@ -1,0 +1,502 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c6_promedio
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int acum;
+            double n;
+            int notas;
+            double prom;
+            double suma;
+            acum = 1;
+            suma = 0;
+            Console.WriteLine("¿Cuantas notas desea promediar?");
+            notas = int.Parse(Console.ReadLine());
+            while (acum <= notas)
+            {
+                Console.WriteLine("ingrese la nota numero " + acum);
+                n = Double.Parse(Console.ReadLine());
+                suma = suma + n;
+                acum = acum + 1;
+            }
+            prom = suma / notas;
+            Console.WriteLine("El promedio es: " + prom);
+            if (prom >= 8)
+            {
+                Console.WriteLine("El estudiante gano la materia");
+            }
+            else
+            {
+                Console.WriteLine("El estudiante perdió la materia");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c10_numeroParImpar
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //programa 10:- programa para saber si un número es Par o impar
+            int a;
+            Console.WriteLine("Ingrese un número para saber si es Par o Impar");
+            a = int.Parse(Console.ReadLine());
+            if (a % 2 == 0)
+            {
+                Console.WriteLine(a + " El número es par");
+            }
+            else
+            {
+                Console.WriteLine(a + " es número Impar");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c9_divi_SiempreNumMayor
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double num1, num2, r;
+            Console.WriteLine("Introducce el primer número");
+            num1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Introducce el segundo número");
+            num2 = double.Parse(Console.ReadLine());
+            if (num2 >= num1)
+                r = num2 / num1;
+            else
+                r = num1 / num2;
+            Console.WriteLine("El resultado de la división es: " + r);
+            Console.ReadKey();
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c8_puedesVotar
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int edad;
+            string sexo;
+            sexo = "";
+            edad = 0;
+            do
+            {
+                Console.WriteLine("Introduce Tu edad:");
+                edad = int.Parse(Console.ReadLine());
+            } while ((edad <= 0));
+            do
+            {
+                Console.WriteLine("Introduce tu sexo (M/H):");
+                sexo = Console.ReadLine();
+            } while (!((sexo.Equals("H") || sexo.Equals("h") || sexo.Equals("M") || sexo.Equals("m"))));
+            if (sexo.Equals("M") || sexo.Equals("m"))
+            {
+                if (edad >= 18)
+                {
+                    Console.WriteLine("Eres mujer, mayor de edad y puedes votar");
+                }
+                else
+                {
+                    Console.WriteLine("Eres mujer, menor de edad y no puedes votar");
+                }
+            }
+            else
+            {
+                if (edad >= 18)
+                {
+                    Console.WriteLine("Eres hombre, mayor de edad y puedes votar");
+                }
+                else
+                {
+                    Console.WriteLine("Eres hombre, menor de edad y no puedes votar");
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c7_operacionesDosNumeros
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+                char opc;
+                double a, b, r = 0;
+                Console.WriteLine("INGRESA LA PRIMERA CANTIDA: ");
+                a = double.Parse(Console.ReadLine());
+                Console.WriteLine("INGRESA LA SEGUNDA CANTIDA: ");
+                b = double.Parse(Console.ReadLine());
+                Console.WriteLine("Ingresa la operacion a realizar");
+                Console.WriteLine("Selecciona 'S' para sumar");
+                Console.WriteLine("Selecciona 'R' para restar");
+                Console.WriteLine("Selecciona 'M' para multiplicar");
+                Console.WriteLine("Selecciona 'D' para dividir");
+                Console.WriteLine("Selecciona 'E' para exponente");
+                opc = char.Parse(Console.ReadLine());
+                if (opc == 'S' || opc == 's')
+                {
+                    r = a + b;
+                }
+                else if (opc == 'R' || opc == 'r')
+                {
+
+                    r = a - b;
+
+                }
+                else if (opc == 'M' || opc == 'm')
+                {
+
+                    r = a * b;
+
+                }
+                else if (opc == 'D' || opc == 'd')
+                {
+
+                    r = a / b;
+
+                }
+                else if (opc == 'E' || opc == 'e')
+                {
+
+                    r = Math.Pow(a, b);
+
+                }
+                Console.WriteLine("EL RESULTADO ES: " + r);
+                Console.ReadKey();
+            }
+    }
+}using System; 
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c4_ConverCelsiusAFahrenheit
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double g, r=0;
+            char opc;
+            Console.WriteLine("Ingrese la grados que desea convertir ");
+            g = double.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la opcion para convertir");
+            Console.WriteLine("Celsius a Fahrenheit = 1");
+            Console.WriteLine("Fahrenheit a Celsius = 2");
+            opc = char.Parse(Console.ReadLine());
+            if (opc == 1)
+            {
+                r = g * 1.8 + 32;
+                Console.WriteLine("la termperatura es de: " + r + "°Fahrenheit");
+            }
+            else if (opc == 2)
+            {
+                r = (g - 32) / 1.8;
+                Console.WriteLine("la termperatura es de: " + r + "°Celsius");
+            }
+            else
+                Console.WriteLine("error no seleccionaste ninguna de las opcciones dadas");
+            Console.ReadKey();
+
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c5_tipoTriangulo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double l1,l2,l3,p;
+            Console.WriteLine("ingrese lado 1");
+            l1 = Double.Parse(Console.ReadLine());
+            Console.WriteLine("ingrese lado 2");
+            l2 = Double.Parse(Console.ReadLine());
+            Console.WriteLine("ingrese lado 3");
+            l3 = Double.Parse(Console.ReadLine());
+            p = l1 + l2 + l3;
+            Console.WriteLine("El perimetro del triangulo es:" + p);
+            if (l1 == l2 && l1 == l3 && l2 == l3)
+            {
+                Console.WriteLine("Tirangulo equilatero");
+            }
+            else
+            {
+                if (l1 != l2 && l1 != l3 && l2 != l3)
+                {
+                    Console.WriteLine("Triangulo escaleno");
+                }
+                else
+                {
+                    if (l1 != l2 && l1 != l3||l2!=l3)
+                    {
+                        Console.WriteLine("Triangulo Isosceles");
+                    }
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c4_ConverCelsiusAFahrenheit
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double g, r=0;
+            char opc;
+            Console.WriteLine("Ingrese la grados que desea convertir ");
+            g = double.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la opcion para convertir");
+            Console.WriteLine("Celsius a Fahrenheit = 1");
+            Console.WriteLine("Fahrenheit a Celsius = 2");
+            opc = char.Parse(Console.ReadLine());
+            if (opc == 1)
+            {
+                r = g * 1.8 + 32;
+                Console.WriteLine("la termperatura es de: " + r + "°Fahrenheit");
+            }
+            else if (opc == 2)
+            {
+                r = (g - 32) / 1.8;
+                Console.WriteLine("la termperatura es de: " + r + "°Celsius");
+            }
+            else
+                Console.WriteLine("error no seleccionaste ninguna de las opcciones dadas");
+            Console.ReadKey();
+
+        }
+    }
+}
+
+       using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c3_cajeroAutomaticoUTHH
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double cuenta;
+            double deposito;
+            int resp2;
+            int respuesta;
+            double retiro;
+            double saldo;
+            saldo = 0;
+            resp2 = 1;
+            respuesta = 0;
+            Console.WriteLine("Bienvenido a l cajero automatico de la UTHH");
+            Console.WriteLine("Ingrese numero de cuenta 18 digitos:");
+            cuenta = Double.Parse(Console.ReadLine());
+            Console.Clear();
+            while (resp2 == 1)
+            {
+                Console.WriteLine("1: = Consultar saldo");
+                Console.WriteLine("2: = Ingresar saldo");
+                Console.WriteLine("3: = Retirar saldo");
+                respuesta = int.Parse(Console.ReadLine());
+                Console.Clear();
+                switch (respuesta)
+                {
+                    case 1:
+                        Console.WriteLine("Tu numero de cuenta es: " + cuenta);
+                        Console.WriteLine("Tu saldo actual es: $" + saldo);
+                        break;
+                    case 2:
+                        Console.WriteLine("Tu numero de cuenta es: " + cuenta);
+                        Console.WriteLine("Ingresa la cantidad a depositar");
+                        deposito = Double.Parse(Console.ReadLine());
+                        saldo = saldo + deposito;
+                        Console.WriteLine("Tu saldo actual es es: $" + saldo);
+                        break;
+                    case 3:
+                        Console.WriteLine("Ingresa la cantidad a retirar");
+                        retiro = Double.Parse(Console.ReadLine());
+                        if (retiro > saldo)
+                        {
+                            Console.WriteLine("La cantidad supera el saldo");
+                            Console.WriteLine("Tu saldo actual es: $" + saldo);
+                        }
+                        else
+                        {
+                            saldo = saldo - retiro;
+                            Console.WriteLine("Tu saldo actual es: $" + saldo);
+                        }
+                        break;
+                }
+                Console.WriteLine("¿Deseas realizar otra operación?");
+                Console.WriteLine("precione [1] para Si o precione [2] para No");
+                resp2 = int.Parse(Console.ReadLine());
+                Console.Clear();
+            }
+        }
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace c2_areaFigurasGeometricas
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double altura, radio, perimetro, lado, diagonalmeno, diagonalmay;
+            double area, base2, base1;
+            int resp2;
+            int respuesta;
+            resp2 = 1;
+            respuesta = 0;
+            while (resp2 == 1)
+            {
+                Console.WriteLine("SELECCIONA LA FIGURA QUE DESEA CONOCER EL ÁREA");
+                Console.WriteLine("1: = CUADRADO");
+                Console.WriteLine("2: = RECTANGULO");
+                Console.WriteLine("3: = TRIANGULO");
+                Console.WriteLine("4: = ROMBO");
+                Console.WriteLine("5: = ROMBOIDE");
+                Console.WriteLine("6: = TRAPECIO");
+                Console.WriteLine("7: = CIRCULO");
+                respuesta = int.Parse(Console.ReadLine());
+                Console.Clear();
+                switch (respuesta)
+                {
+                    case 1:
+                        Console.WriteLine("INGRESA EL LADO ");
+                        lado = Double.Parse(Console.ReadLine());
+                        area = lado * lado;
+                        perimetro = lado + lado + lado + lado;
+                        Console.WriteLine("El área del cuadreado es de: " + area);
+                        Console.WriteLine("El perimetro del cuadreado es de: " + perimetro);
+                        break;
+                    case 2:
+                        Console.WriteLine("INGRESA LA BASE:");
+                        base1 = Double.Parse(Console.ReadLine());
+                        Console.WriteLine("INGRESA LA ALTURA:");
+                        altura = Double.Parse(Console.ReadLine());
+                        area = base1 * altura;
+                        perimetro = base1 + base1 + altura + altura;
+                        Console.WriteLine("El área del cuadreado es de: " + area);
+                        Console.WriteLine("El perimetro del cuadreado es de: " + perimetro);
+                        break;
+                    case 3:
+                        Console.WriteLine("INGRESA LA BASE:");
+                        base1 = Double.Parse(Console.ReadLine());
+                        Console.WriteLine("INGRESA LA ALTURA:");
+                        altura = Double.Parse(Console.ReadLine());
+                        area = (base1 * altura) / 2;
+                        Console.WriteLine("El área del cuadreado es de: " + area);
+                        break;
+                    case 4:
+                        Console.WriteLine("INGRESA LA DIAGONAL MAYOR");
+                        diagonalmay = Double.Parse(Console.ReadLine());
+                        Console.WriteLine("INGRESA LA DIAGONAL MENOR");
+                        diagonalmeno = Double.Parse(Console.ReadLine());
+                        area = diagonalmay * diagonalmeno;
+                        Console.WriteLine("El área del cuadreado es de: " + area);
+                        break;
+                    case 5:
+                        Console.WriteLine("INGRESA LA BASE:");
+                        base1 = Double.Parse(Console.ReadLine());
+                        Console.WriteLine("INGRESA LA ALTURA:");
+                        altura = Double.Parse(Console.ReadLine());
+                        area = base1 * altura;
+                        perimetro = base1 + base1 + altura + altura;
+                        Console.WriteLine("El área del cuadreado es de: " + area);
+                        Console.WriteLine("El perimetro del cuadreado es de: " + perimetro);
+                        break;
+                    case 6:
+                        Console.WriteLine("INGRESA LA BASE MENOR:");
+                        base1 = Double.Parse(Console.ReadLine());
+                        Console.WriteLine("INGRESA LA BASE MAYOR:");
+                        base2 = Double.Parse(Console.ReadLine());
+                        Console.WriteLine("INGRESA LA ALTURA:");
+                        altura = Double.Parse(Console.ReadLine());
+                        area = base1 * altura;
+                        Console.WriteLine("El área del cuadreado es de: " + area);
+                        break;
+                    case 7:
+                        Console.WriteLine("INGRESA EL RADIO:");
+                        radio = Double.Parse(Console.ReadLine());
+                        area = 3.14 * (radio * 2);
+                        Console.WriteLine("El área del circulo es de: " + area);
+                        break;
+                }
+                Console.WriteLine("¿Deseas realizar otra operación?");
+                Console.WriteLine("precione [1] para Si o precione [2] para No");
+                resp2 = int.Parse(Console.ReadLine());
+                Console.Clear();
+            }
+        }
+    }
+ }
+
